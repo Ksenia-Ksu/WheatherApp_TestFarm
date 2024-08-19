@@ -20,11 +20,10 @@ final class LocalizationManager: LocalizationManaging {
         let locale = Locale(identifier: language)
         let regionCode = locale.region?.identifier
 
-        if regionCode == "RU" {
-            return .ru
-        } else {
+        if regionCode == "en" {
             return .en
-        }
+        } else {
+            return .ru        }
     }
 }
 

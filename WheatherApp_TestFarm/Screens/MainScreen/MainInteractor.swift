@@ -28,7 +28,7 @@ final class MainInteractor: NSObject, WeatherInteractorProtocol {
     
     func fetchWeatherWithCity(name: String) {
         let selectedLanguage = LocalizationManager.selectedLanguage()
-        print(selectedLanguage, "selectedLanguage")
+        
         self.networkManager.getWheatherBy(city: name, language: selectedLanguage){ response in
             switch response {
             case let .success(items):
