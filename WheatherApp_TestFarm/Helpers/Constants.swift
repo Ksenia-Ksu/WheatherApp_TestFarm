@@ -29,7 +29,7 @@ public struct Formatter {
         }
       
         let date = dateFormatter.date(from: string)
-        dateFormatter.setLocalizedDateFormatFromTemplate("MMMMd")
+        dateFormatter.setLocalizedDateFormatFromTemplate("dd.MM.yy")
         guard let date = date else { return ""}
         return (dateFormatter.string(from: date))
     }

@@ -50,27 +50,17 @@ final class MainViewController: UIViewController {
         rightButton.tintColor = Colors.text
         navigationItem.rightBarButtonItem = rightButton
         
-        let left = UIBarButtonItem(image: UIImage(systemName: SFSymbols.localeSettings))
+        let left = UIBarButtonItem(image: UIImage(systemName: SFSymbols.localeSettings), style: .plain, target: self, action: #selector(changeLanguage))
         left.tintColor = Colors.text
-        left.menu = menuLanguageSelection
+
         navigationItem.leftBarButtonItem = left
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
-    private lazy var menuLanguageSelection: UIMenu = {
-        let english = UIAction(title: "en") { _ in
-            self.interactor.changeLanguage(on: .en)
-        }
-        
-        let russin = UIAction(title: "ru") { _ in
-            self.interactor.changeLanguage(on: .ru)
-        }
-        
-        let menu = UIMenu(title: "mainView_Menu_title".localized, children: [english, russin])
-        
-        return menu
-    }()
+    @objc func changeLanguage() {
+        self.interactor.changeLanguage()
+    }
     
     @objc func openSearch(sender: UIBarButtonItem) {
         let vc = SearchModuleBuilder().build()

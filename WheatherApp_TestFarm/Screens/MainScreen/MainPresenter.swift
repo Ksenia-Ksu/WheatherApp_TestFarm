@@ -8,7 +8,7 @@
 import Foundation
 
 protocol WeatherPresentationProtocol {
-    func presentData(_ response: [WeatherModel])
+    func presentData(_ response: [WeatherModel], language: Language)
     func presentError(_ error: String)
 }
 
@@ -16,7 +16,7 @@ final class MainPresenter: WeatherPresentationProtocol {
     
     weak var controller: DisplayWheather?
     
-    func presentData(_ response: [WeatherModel]) {
+    func presentData(_ response: [WeatherModel], language: Language) {
         var viewModels: [WeatherModel] = []
         for model in response {
             let viewModel = WeatherModel(conditionId: model.conditionId,
@@ -25,8 +25,8 @@ final class MainPresenter: WeatherPresentationProtocol {
                                          maxTemp: model.maxTemp + "°",
                                          minTemp: model.minTemp + "°",
                                          wind: model.wind + " м/c",
-                                         date: Formatter.dateFormatter(string: model.date, language: .en),
-                                         description: model.description
+                                         date: Formatter.dateFormatter(string: model.date, language: language),
+                                         description: model.description.localized
             )
             viewModels.append(viewModel)
         }

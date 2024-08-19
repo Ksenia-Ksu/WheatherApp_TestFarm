@@ -15,4 +15,5 @@
 "mainView_Menu_title" = "Change language"; 
 "moscow" = "Moscow";
 "search_placeholder" = "Enter the name of city";
+"delete" = "Delete";
 

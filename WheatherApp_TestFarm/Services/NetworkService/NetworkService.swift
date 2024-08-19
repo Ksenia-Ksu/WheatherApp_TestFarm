@@ -12,11 +12,6 @@ protocol NetworkServiceProtocol {
     func getWheatherBy(city name: String,
                        language: Language,
                        completion: @escaping (Result<[WeatherModel], Error>) -> Void)
-    
-    func getWheatherBy(lat: CLLocationDegrees,
-                       lon: CLLocationDegrees,
-                       language: Language,
-                       completion: @escaping (Result<[WeatherModel], Error>) -> Void)
 }
 
 final class NetworkService: NetworkServiceProtocol {
@@ -47,31 +42,6 @@ final class NetworkService: NetworkServiceProtocol {
             }
             task.resume()
         }
-        
-    }
-    
-    func getWheatherBy(lat: CLLocationDegrees, lon: CLLocationDegrees, language: Language, completion: @escaping (Result<[WeatherModel], Error>) -> Void) {
-        
-        let url = URLBuilder.createURL(language: language, longitude: lon, latitude: lat)
-        
-        guard let url = URL(string: url)   else { return }
-        let session = URLSession(configuration: .default)
-        let request = URLRequest(url: url)
-        let task = session.dataTask(with: request) { data, _, error in
-            if let data = data {
-                let items = self.parseJSONData(data)
-                DispatchQueue.main.async {
-                    completion(.success(items))
-                }
-            }
-            if let error = error {
-                DispatchQueue.main.async {
-                    completion(.failure(error))
-                }
-                return
-            }
-        }
-        task.resume()
         
     }
     

@@ -101,7 +101,7 @@ extension SearchView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { [weak self] _, _, _ in
+        let deleteAction = UIContextualAction(style: .destructive, title: "delete".localized) { [weak self] _, _, _ in
             if let city = self?.cities[indexPath.row] {
                 self?.delegate?.deleteCity(city: city)
                 self?.cities.remove(at: indexPath.row)
@@ -119,7 +119,9 @@ extension SearchView: SearcBarHandleProtocol {
     }
     
     func reloadData() {
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func searchBarIsTapped(city: String) {

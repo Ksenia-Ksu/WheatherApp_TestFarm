@@ -17,7 +17,6 @@ protocol CoreDataStorageServicing {
     
  
     func fetchObjects() throws -> [Cities]
-    
   
     func fetchObject(withName name: String, context: NSManagedObjectContext) throws -> Cities?
     
@@ -29,15 +28,12 @@ protocol CoreDataStorageServicing {
         keyForSort: String,
         sortAscending: Bool
     ) -> NSFetchedResultsController<NSFetchRequestResult>
-    
-   // noneed
+
     func deleteObject(withName name: String, context: NSManagedObjectContext) throws
 }
  
 final class CoreDataStorageService {
     static let shared = CoreDataStorageService()
-    
-
     
     // MARK: - Core Data stack
     
@@ -95,7 +91,7 @@ extension CoreDataStorageService: CoreDataStorageServicing {
     
     func fetchObject(withName name: String, context: NSManagedObjectContext) throws -> Cities? {
         let fetchRequest: NSFetchRequest<Cities> = Cities.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+        fetchRequest.predicate = NSPredicate(format: "city == %@", name)
         
         let results = try context.fetch(fetchRequest)
         return results.first

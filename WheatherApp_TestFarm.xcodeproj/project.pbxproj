@@ -22,7 +22,7 @@
 		8597DF4B2C73904900C82357 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF4A2C73904900C82357 /* NetworkService.swift */; };
 		8597DF4D2C73906200C82357 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF4C2C73906200C82357 /* URLBuilder.swift */; };
 		8597DF4F2C7390AC00C82357 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF4E2C7390AC00C82357 /* Language.swift */; };
-		8597DF542C739CEF00C82357 /* LanguageSelectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF532C739CEF00C82357 /* LanguageSelectionService.swift */; };
+		8597DF542C739CEF00C82357 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF532C739CEF00C82357 /* LocalizationManager.swift */; };
 		8597DF562C73A57000C82357 /* MainWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF552C73A57000C82357 /* MainWeatherView.swift */; };
 		8597DF592C73A5A400C82357 /* WheatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF582C73A5A400C82357 /* WheatherCell.swift */; };
 		8597DF5C2C73B23900C82357 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF5B2C73B23900C82357 /* SearchViewController.swift */; };
@@ -35,7 +35,6 @@
 		8597DF6D2C73BE2C00C82357 /* Cities+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF6B2C73BE2C00C82357 /* Cities+CoreDataClass.swift */; };
 		8597DF6E2C73BE2C00C82357 /* Cities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF6C2C73BE2C00C82357 /* Cities+CoreDataProperties.swift */; };
 		8597DF742C73CC2E00C82357 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8597DF722C73CC2E00C82357 /* Localizable.strings */; };
-		8597DF772C73D0F100C82357 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF762C73D0F100C82357 /* UserDefaultsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +55,7 @@
 		8597DF4A2C73904900C82357 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8597DF4C2C73906200C82357 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		8597DF4E2C7390AC00C82357 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
-		8597DF532C739CEF00C82357 /* LanguageSelectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionService.swift; sourceTree = "<group>"; };
+		8597DF532C739CEF00C82357 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		8597DF552C73A57000C82357 /* MainWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherView.swift; sourceTree = "<group>"; };
 		8597DF582C73A5A400C82357 /* WheatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherCell.swift; sourceTree = "<group>"; };
 		8597DF5B2C73B23900C82357 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +70,6 @@
 		8597DF6F2C73C9F300C82357 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8597DF732C73CC2E00C82357 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8597DF752C73CC4200C82357 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		8597DF762C73D0F100C82357 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,9 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				8597DF492C738F9A00C82357 /* NetworkService */,
-				8597DF532C739CEF00C82357 /* LanguageSelectionService.swift */,
+				8597DF532C739CEF00C82357 /* LocalizationManager.swift */,
 				8597DF652C73B87E00C82357 /* CoreDataService.swift */,
-				8597DF762C73D0F100C82357 /* UserDefaultsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -281,8 +278,7 @@
 				8597DF662C73B87E00C82357 /* CoreDataService.swift in Sources */,
 				8597DF5C2C73B23900C82357 /* SearchViewController.swift in Sources */,
 				8597DF562C73A57000C82357 /* MainWeatherView.swift in Sources */,
-				8597DF542C739CEF00C82357 /* LanguageSelectionService.swift in Sources */,
-				8597DF772C73D0F100C82357 /* UserDefaultsService.swift in Sources */,
+				8597DF542C739CEF00C82357 /* LocalizationManager.swift in Sources */,
 				8597DF642C73B2D200C82357 /* SearchModuleBuilder.swift in Sources */,
 				8597DF332C73894000C82357 /* MainModuleBuilder.swift in Sources */,
 				8597DF682C73B8F400C82357 /* CityStorageModel.swift in Sources */,

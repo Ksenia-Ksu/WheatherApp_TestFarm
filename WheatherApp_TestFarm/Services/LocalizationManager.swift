@@ -1,5 +1,5 @@
 //
-//  LanguageSelectionService.swift
+//  LocalizationManager.swift
 //  WheatherApp_TestFarm
 //
 //  Created by Ксения Кобак on 19.08.2024.

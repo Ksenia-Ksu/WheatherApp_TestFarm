@@ -15,20 +15,16 @@ protocol SearchInteractorProtocol: AnyObject {
 
 final class SearchInteractor: SearchInteractorProtocol {
     
-    private let userDefaults: UserDefaultsStorageProtocol
-    
     private let presenter: SearchPresenterProtocol
     private let storage: CoreDataStorageServicing
    
     
-    init(presenter: SearchPresenterProtocol, storage: CoreDataStorageServicing, userDefaults: UserDefaultsStorageProtocol ) {
+    init(presenter: SearchPresenterProtocol, storage: CoreDataStorageServicing) {
         self.presenter = presenter
         self.storage = storage
-        self.userDefaults = userDefaults
     }
     
     func addCity(city: String) {
-        self.userDefaults.saveLast(city: city)
         let cityModel = CityModel(city: city)
         
         self.storage.performSave { [weak self] context in
@@ -59,6 +55,7 @@ final class SearchInteractor: SearchInteractorProtocol {
         self.storage.performSave({ [weak self] context in
             do {
                 try self?.storage.deleteObject(withName: city, context: context)
+                
             } catch {
                 print(error.localizedDescription)
             }

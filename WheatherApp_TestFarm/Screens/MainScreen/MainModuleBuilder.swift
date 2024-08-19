@@ -10,11 +10,9 @@ import UIKit
 struct MainModuleBuilder {
     func build(context: String?) -> UIViewController {
         let networkService = NetworkService()
-       
         let presenter = MainPresenter()
-        let userDefaults = UserDefaultsStorageService()
-
-        let interactor = MainInteractor(presenter: presenter, networkingManager: networkService, userDefaultsService: userDefaults)
+ 
+        let interactor = MainInteractor(presenter: presenter, networkingManager: networkService)
         if let city = context {
             let vc = MainViewController(interactor: interactor, openWithCity: city)
             presenter.controller = vc

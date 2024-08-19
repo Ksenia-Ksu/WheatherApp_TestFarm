@@ -83,14 +83,6 @@ final class CityWeatherView: UIView {
         return imageView
     }()
     
-    private lazy var currentDescription: UILabel = {
-        let currentDescription = UILabel()
-        currentDescription.textColor = Colors.text
-        currentDescription.font = UIFont.boldSystemFont(ofSize: 20)
-        currentDescription.translatesAutoresizingMaskIntoConstraints = false
-        return currentDescription
-    }()
-    
     private lazy var currentWind: UILabel = {
         let currentWind = UILabel()
         currentWind.textColor = Colors.text
@@ -137,7 +129,6 @@ final class CityWeatherView: UIView {
         topView.addSubview(hstack)
         hstack.addArrangedSubview(imageView)
         hstack.addArrangedSubview(currentTemp)
-        topView.addSubview(currentDescription)
         topView.addSubview(currentWind)
         topView.addSubview(maxTemp)
         topView.addSubview(minTemp)
@@ -165,10 +156,7 @@ final class CityWeatherView: UIView {
             self.hstack.topAnchor.constraint(equalTo: currentCity.bottomAnchor, constant: Layout.maxtop),
             self.hstack.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
             
-            self.currentDescription.topAnchor.constraint(equalTo: currentTemp.bottomAnchor, constant: Layout.maxtop),
-            self.currentDescription.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
-            
-            self.currentWind.topAnchor.constraint(equalTo: currentDescription.bottomAnchor, constant: Layout.minTop),
+            self.currentWind.topAnchor.constraint(equalTo: currentTemp.bottomAnchor, constant: Layout.minTop),
             self.currentWind.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
             
             self.maxTemp.topAnchor.constraint(equalTo: currentWind.bottomAnchor, constant: Layout.minTop),
@@ -192,17 +180,18 @@ extension CityWeatherView: DisplaysWeather {
     func displayError(error: String) {
         stopLoading()
         self.tableView.isHidden = true
+        self.currentLabel.textColor = .red
         self.currentLabel.text = error
     }
     
     func configure(with viewModel: [WeatherModel]) {
         self.weatherData = viewModel
         if !viewModel.isEmpty {
+            self.currentLabel.textColor = Colors.text
             currentLabel.text = Text.currentLocation.localized
             currentCity.text = viewModel[0].cityName
             currentTemp.text = viewModel[0].temperature
             imageView.image = UIImage(systemName: viewModel[0].conditionTitle)
-            currentDescription.text = viewModel[0].description
             currentWind.text = Text.wind.localized + viewModel[0].wind
             maxTemp.text = Text.max.localized + viewModel[0].maxTemp
             minTemp.text = Text.min.localized + viewModel[0].minTemp
@@ -215,7 +204,6 @@ extension CityWeatherView: DisplaysWeather {
         currentLabel.isHidden = true
         currentCity.isHidden = true
         hstack.isHidden = true
-        currentDescription.isHidden = true
         currentWind.isHidden = true
         maxTemp.isHidden = true
         minTemp.isHidden = true
@@ -228,7 +216,6 @@ extension CityWeatherView: DisplaysWeather {
         currentLabel.isHidden = false
         currentCity.isHidden = false
         hstack.isHidden = false
-        currentDescription.isHidden = false
         currentWind.isHidden = false
         maxTemp.isHidden = false
         minTemp.isHidden = false
@@ -282,7 +269,5 @@ extension CityWeatherView {
         static let max = "mainView_Text_max"
         static let min = "mainView_Text_min"
     }
-    
-    
 }
 

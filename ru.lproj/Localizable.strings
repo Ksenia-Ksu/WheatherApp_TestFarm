@@ -15,3 +15,4 @@
 "mainView_Menu_title" = "Выберите язык"; 
 "moscow" = "Москва";
 "search_placeholder" = "Введите город";
+"delete" = "Удалить";

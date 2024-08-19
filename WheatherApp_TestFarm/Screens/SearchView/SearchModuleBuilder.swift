@@ -11,8 +11,7 @@ public struct SearchModuleBuilder {
     func build() -> UIViewController {
         let presenter = SearchPresenter()
         let storage = CoreDataStorageService.shared
-        let userdefaults = UserDefaultsStorageService()
-        let interactor = SearchInteractor(presenter: presenter, storage: storage, userDefaults: userdefaults)
+        let interactor = SearchInteractor(presenter: presenter, storage: storage)
         let vc = SearchViewController(interactor: interactor)
         presenter.controller = vc
         return vc
