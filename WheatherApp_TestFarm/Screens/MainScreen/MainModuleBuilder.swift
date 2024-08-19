@@ -12,15 +12,15 @@ struct MainModuleBuilder {
         let networkService = NetworkService()
        
         let presenter = MainPresenter()
-        let location = LocationManager()
+        let userDefaults = UserDefaultsStorageService()
 
-        let interactor = MainInteractor(presenter: presenter, networkingManager: networkService, locationManager: location, language: .ru)
-        if context != nil {
-            let vc = MainViewController(interactor: interactor)
+        let interactor = MainInteractor(presenter: presenter, networkingManager: networkService, userDefaultsService: userDefaults)
+        if let city = context {
+            let vc = MainViewController(interactor: interactor, openWithCity: city)
             presenter.controller = vc
             return vc
         } else {
-            let vc = MainViewController(interactor: interactor)
+            let vc = MainViewController(interactor: interactor, openWithCity: nil)
             presenter.controller = vc
             return vc
         }

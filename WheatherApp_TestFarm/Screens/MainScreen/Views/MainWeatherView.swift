@@ -9,7 +9,7 @@ import UIKit
 
 protocol DisplaysWeather: UIView {
     func configure(with viewModel: [WeatherModel])
-    func displayError()
+    func displayError(error: String)
     func startLoading()
     func stopLoading()
 }
@@ -189,23 +189,23 @@ final class CityWeatherView: UIView {
 // MARK: - DisplaysWeather
 extension CityWeatherView: DisplaysWeather {
     
-    func displayError() {
+    func displayError(error: String) {
         stopLoading()
         self.tableView.isHidden = true
-        self.currentLabel.text = Text.cityError
+        self.currentLabel.text = error
     }
     
     func configure(with viewModel: [WeatherModel]) {
         self.weatherData = viewModel
         if !viewModel.isEmpty {
-            currentLabel.text = Text.currentLocation
+            currentLabel.text = Text.currentLocation.localized
             currentCity.text = viewModel[0].cityName
             currentTemp.text = viewModel[0].temperature
             imageView.image = UIImage(systemName: viewModel[0].conditionTitle)
             currentDescription.text = viewModel[0].description
-            currentWind.text = Text.wind + viewModel[0].wind
-            maxTemp.text = Text.max + viewModel[0].maxTemp
-            minTemp.text = Text.min + viewModel[0].minTemp
+            currentWind.text = Text.wind.localized + viewModel[0].wind
+            maxTemp.text = Text.max.localized + viewModel[0].maxTemp
+            minTemp.text = Text.min.localized + viewModel[0].minTemp
         }
         tableView.reloadData()
     }
@@ -243,7 +243,7 @@ extension CityWeatherView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        Text.headerText
+        Text.headerText.localized
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -275,12 +275,12 @@ extension CityWeatherView {
     }
     
     enum Text {
-        static let headerText = "Погода на 5 дней"
-        static let cityError =  "Город не найден"
-        static let currentLocation = "Тeкущее место"
-        static let wind = "Cкорость ветра: "
-        static let max = "Maкс.темп: "
-        static let min = "Mин.темп: "
+        static let headerText = "mainView_Text_headerText"
+        static let cityError =  "mainView_Text_cityError"
+        static let currentLocation = "mainView_Text_currentLocation"
+        static let wind = "mainView_Text_wind"
+        static let max = "mainView_Text_max"
+        static let min = "mainView_Text_min"
     }
     
     

@@ -9,16 +9,18 @@ import UIKit
 
 protocol DisplayWheather: AnyObject {
     func displayFetchedModels(_ viewModel: [WeatherModel])
-    func displayError()
+    func displayError(error: String)
 }
 
 final class MainViewController: UIViewController {
     
     private lazy var contentView: DisplaysWeather = CityWeatherView(weatherData: [])
     private var interactor: WeatherInteractorProtocol
+    private var openWithCity: String?
     
-    init (interactor: WeatherInteractorProtocol) {
+    init (interactor: WeatherInteractorProtocol, openWithCity: String?) {
         self.interactor = interactor
+        self.openWithCity = openWithCity
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -31,15 +33,15 @@ final class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        if let city = openWithCity {
-//            contentView.startLoading()
-//            self.interactor.fetchWeatherWithCity(name: city, language: <#Language#>)
-//        }
+        if let city = openWithCity {
+            contentView.startLoading()
+            self.interactor.fetchWeatherWithCity(name: city)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         navBarSetup()
-        self.interactor.fetchWeatherWithCity(name: "Москва", language: .ru)
+        self.interactor.fetchWeatherWithCity(name: "moscow".localized)
     }
     // MARK: - navBarSetup
     private func navBarSetup() {
@@ -58,20 +60,21 @@ final class MainViewController: UIViewController {
     
     private lazy var menuLanguageSelection: UIMenu = {
         let english = UIAction(title: "en") { _ in
-            // setup interactor
+            self.interactor.changeLanguage(on: .en)
         }
         
         let russin = UIAction(title: "ru") { _ in
-            // setup interactor
+            self.interactor.changeLanguage(on: .ru)
         }
         
-        let menu = UIMenu(title: "Выберите язык", children: [english, russin])
+        let menu = UIMenu(title: "mainView_Menu_title".localized, children: [english, russin])
         
         return menu
     }()
     
     @objc func openSearch(sender: UIBarButtonItem) {
-        
+        let vc = SearchModuleBuilder().build()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -79,8 +82,8 @@ final class MainViewController: UIViewController {
 // MARK: - DisplayModels
 
 extension MainViewController: DisplayWheather {
-    func displayError() {
-        self.contentView.displayError()
+    func displayError(error: String) {
+        self.contentView.displayError(error: error)
     }
     
     func displayCachedModels(_ viewModel: [WeatherModel]) {

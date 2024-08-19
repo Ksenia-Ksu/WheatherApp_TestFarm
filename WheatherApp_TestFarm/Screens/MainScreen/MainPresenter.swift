@@ -9,7 +9,7 @@ import Foundation
 
 protocol WeatherPresentationProtocol {
     func presentData(_ response: [WeatherModel])
-    func presentError()
+    func presentError(_ error: String)
 }
 
 final class MainPresenter: WeatherPresentationProtocol {
@@ -25,16 +25,17 @@ final class MainPresenter: WeatherPresentationProtocol {
                                          maxTemp: model.maxTemp + "°",
                                          minTemp: model.minTemp + "°",
                                          wind: model.wind + " м/c",
-                                         date: Formatter.dateFormatter(string: model.date),
+                                         date: Formatter.dateFormatter(string: model.date, language: .en),
                                          description: model.description
             )
             viewModels.append(viewModel)
         }
+       
         controller?.displayFetchedModels(viewModels)
     }
     
-    func presentError() {
-        self.controller?.displayError()
+    func presentError(_ error: String) {
+        self.controller?.displayError(error: error)
     }
     
 }

@@ -19,14 +19,23 @@
 		8597DF402C738D8D00C82357 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF3F2C738D8D00C82357 /* ModelData.swift */; };
 		8597DF432C738DD500C82357 /* WheatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF422C738DD500C82357 /* WheatherModel.swift */; };
 		8597DF462C738E9400C82357 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF452C738E9400C82357 /* Constants.swift */; };
-		8597DF482C738F9700C82357 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF472C738F9700C82357 /* NetworkError.swift */; };
 		8597DF4B2C73904900C82357 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF4A2C73904900C82357 /* NetworkService.swift */; };
 		8597DF4D2C73906200C82357 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF4C2C73906200C82357 /* URLBuilder.swift */; };
 		8597DF4F2C7390AC00C82357 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF4E2C7390AC00C82357 /* Language.swift */; };
-		8597DF522C739BB000C82357 /* CoreLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF512C739BB000C82357 /* CoreLocationService.swift */; };
 		8597DF542C739CEF00C82357 /* LanguageSelectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF532C739CEF00C82357 /* LanguageSelectionService.swift */; };
 		8597DF562C73A57000C82357 /* MainWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF552C73A57000C82357 /* MainWeatherView.swift */; };
 		8597DF592C73A5A400C82357 /* WheatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF582C73A5A400C82357 /* WheatherCell.swift */; };
+		8597DF5C2C73B23900C82357 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF5B2C73B23900C82357 /* SearchViewController.swift */; };
+		8597DF5E2C73B26000C82357 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF5D2C73B26000C82357 /* SearchInteractor.swift */; };
+		8597DF602C73B27E00C82357 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF5F2C73B27E00C82357 /* SearchPresenter.swift */; };
+		8597DF622C73B29600C82357 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF612C73B29600C82357 /* SearchView.swift */; };
+		8597DF642C73B2D200C82357 /* SearchModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF632C73B2D200C82357 /* SearchModuleBuilder.swift */; };
+		8597DF662C73B87E00C82357 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF652C73B87E00C82357 /* CoreDataService.swift */; };
+		8597DF682C73B8F400C82357 /* CityStorageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF672C73B8F400C82357 /* CityStorageModel.swift */; };
+		8597DF6D2C73BE2C00C82357 /* Cities+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF6B2C73BE2C00C82357 /* Cities+CoreDataClass.swift */; };
+		8597DF6E2C73BE2C00C82357 /* Cities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF6C2C73BE2C00C82357 /* Cities+CoreDataProperties.swift */; };
+		8597DF742C73CC2E00C82357 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8597DF722C73CC2E00C82357 /* Localizable.strings */; };
+		8597DF772C73D0F100C82357 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597DF762C73D0F100C82357 /* UserDefaultsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,14 +53,25 @@
 		8597DF3F2C738D8D00C82357 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		8597DF422C738DD500C82357 /* WheatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherModel.swift; sourceTree = "<group>"; };
 		8597DF452C738E9400C82357 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		8597DF472C738F9700C82357 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		8597DF4A2C73904900C82357 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8597DF4C2C73906200C82357 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		8597DF4E2C7390AC00C82357 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
-		8597DF512C739BB000C82357 /* CoreLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationService.swift; sourceTree = "<group>"; };
 		8597DF532C739CEF00C82357 /* LanguageSelectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionService.swift; sourceTree = "<group>"; };
 		8597DF552C73A57000C82357 /* MainWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherView.swift; sourceTree = "<group>"; };
 		8597DF582C73A5A400C82357 /* WheatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherCell.swift; sourceTree = "<group>"; };
+		8597DF5B2C73B23900C82357 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8597DF5D2C73B26000C82357 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		8597DF5F2C73B27E00C82357 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		8597DF612C73B29600C82357 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		8597DF632C73B2D200C82357 /* SearchModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModuleBuilder.swift; sourceTree = "<group>"; };
+		8597DF652C73B87E00C82357 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		8597DF672C73B8F400C82357 /* CityStorageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityStorageModel.swift; sourceTree = "<group>"; };
+		8597DF6B2C73BE2C00C82357 /* Cities+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cities+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8597DF6C2C73BE2C00C82357 /* Cities+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cities+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8597DF6F2C73C9F300C82357 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8597DF732C73CC2E00C82357 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8597DF752C73CC4200C82357 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8597DF762C73D0F100C82357 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +88,9 @@
 		8597DF072C7387BC00C82357 = {
 			isa = PBXGroup;
 			children = (
+				8597DF722C73CC2E00C82357 /* Localizable.strings */,
+				8597DF6B2C73BE2C00C82357 /* Cities+CoreDataClass.swift */,
+				8597DF6C2C73BE2C00C82357 /* Cities+CoreDataProperties.swift */,
 				8597DF122C7387BC00C82357 /* WheatherApp_TestFarm */,
 				8597DF112C7387BC00C82357 /* Products */,
 			);
@@ -102,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				8597DF2D2C7388F600C82357 /* MainScreen */,
+				8597DF5A2C73B21900C82357 /* SearchView */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -122,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				8597DF3F2C738D8D00C82357 /* ModelData.swift */,
+				8597DF672C73B8F400C82357 /* CityStorageModel.swift */,
 				8597DF422C738DD500C82357 /* WheatherModel.swift */,
 				8597DF4E2C7390AC00C82357 /* Language.swift */,
 			);
@@ -140,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				8597DF4A2C73904900C82357 /* NetworkService.swift */,
-				8597DF472C738F9700C82357 /* NetworkError.swift */,
 				8597DF4C2C73906200C82357 /* URLBuilder.swift */,
 			);
 			path = NetworkService;
@@ -150,8 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				8597DF492C738F9A00C82357 /* NetworkService */,
-				8597DF512C739BB000C82357 /* CoreLocationService.swift */,
 				8597DF532C739CEF00C82357 /* LanguageSelectionService.swift */,
+				8597DF652C73B87E00C82357 /* CoreDataService.swift */,
+				8597DF762C73D0F100C82357 /* UserDefaultsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -163,6 +188,18 @@
 				8597DF582C73A5A400C82357 /* WheatherCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8597DF5A2C73B21900C82357 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				8597DF5B2C73B23900C82357 /* SearchViewController.swift */,
+				8597DF5D2C73B26000C82357 /* SearchInteractor.swift */,
+				8597DF5F2C73B27E00C82357 /* SearchPresenter.swift */,
+				8597DF612C73B29600C82357 /* SearchView.swift */,
+				8597DF632C73B2D200C82357 /* SearchModuleBuilder.swift */,
+			);
+			path = SearchView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +244,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 8597DF072C7387BC00C82357;
 			productRefGroup = 8597DF112C7387BC00C82357 /* Products */;
@@ -224,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8597DF202C7387BD00C82357 /* Assets.xcassets in Resources */,
+				8597DF742C73CC2E00C82357 /* Localizable.strings in Resources */,
 				8597DF232C7387BD00C82357 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,20 +278,28 @@
 				8597DF2C2C7388E400C82357 /* MainWeatherViewController.swift in Sources */,
 				8597DF142C7387BC00C82357 /* AppDelegate.swift in Sources */,
 				8597DF4F2C7390AC00C82357 /* Language.swift in Sources */,
+				8597DF662C73B87E00C82357 /* CoreDataService.swift in Sources */,
+				8597DF5C2C73B23900C82357 /* SearchViewController.swift in Sources */,
 				8597DF562C73A57000C82357 /* MainWeatherView.swift in Sources */,
 				8597DF542C739CEF00C82357 /* LanguageSelectionService.swift in Sources */,
+				8597DF772C73D0F100C82357 /* UserDefaultsService.swift in Sources */,
+				8597DF642C73B2D200C82357 /* SearchModuleBuilder.swift in Sources */,
 				8597DF332C73894000C82357 /* MainModuleBuilder.swift in Sources */,
+				8597DF682C73B8F400C82357 /* CityStorageModel.swift in Sources */,
 				8597DF4D2C73906200C82357 /* URLBuilder.swift in Sources */,
+				8597DF6D2C73BE2C00C82357 /* Cities+CoreDataClass.swift in Sources */,
+				8597DF6E2C73BE2C00C82357 /* Cities+CoreDataProperties.swift in Sources */,
 				8597DF162C7387BC00C82357 /* SceneDelegate.swift in Sources */,
+				8597DF622C73B29600C82357 /* SearchView.swift in Sources */,
 				8597DF462C738E9400C82357 /* Constants.swift in Sources */,
 				8597DF402C738D8D00C82357 /* ModelData.swift in Sources */,
 				8597DF312C73893000C82357 /* MainPresenter.swift in Sources */,
-				8597DF482C738F9700C82357 /* NetworkError.swift in Sources */,
-				8597DF522C739BB000C82357 /* CoreLocationService.swift in Sources */,
+				8597DF5E2C73B26000C82357 /* SearchInteractor.swift in Sources */,
 				8597DF432C738DD500C82357 /* WheatherModel.swift in Sources */,
 				8597DF4B2C73904900C82357 /* NetworkService.swift in Sources */,
 				8597DF2F2C73892600C82357 /* MainInteractor.swift in Sources */,
 				8597DF592C73A5A400C82357 /* WheatherCell.swift in Sources */,
+				8597DF602C73B27E00C82357 /* SearchPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +310,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				8597DF222C7387BD00C82357 /* Base */,
+				8597DF6F2C73C9F300C82357 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8597DF722C73CC2E00C82357 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8597DF732C73CC2E00C82357 /* en */,
+				8597DF752C73CC4200C82357 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -275,6 +332,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -338,6 +396,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

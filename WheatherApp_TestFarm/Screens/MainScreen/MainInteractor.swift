@@ -9,40 +9,37 @@ import Foundation
 import CoreLocation
 
 protocol WeatherInteractorProtocol {
-    func fetchWeatherWithCity(name: String, language: Language)
-    func fetchWeatherWithCoordinates(lat: CLLocationDegrees, lon: CLLocationDegrees, language: Language)
-    func loadLocation()
+    func fetchWeatherWithCity(name: String)
+    func changeLanguage(on: Language)
 }
 
 final class MainInteractor: NSObject, WeatherInteractorProtocol {
     
     private let presenter: WeatherPresentationProtocol
     private let networkManager: NetworkServiceProtocol
-    private let locationManager: LocationUpdating
-    private let language: Language?
+    private let userDefaultsService: UserDefaultsStorageProtocol
     
-    init(presenter: WeatherPresentationProtocol, networkingManager: NetworkServiceProtocol, locationManager: LocationUpdating,  language: Language) {
+    init(presenter: WeatherPresentationProtocol, networkingManager: NetworkServiceProtocol, userDefaultsService: UserDefaultsStorageProtocol ) {
         self.presenter = presenter
         self.networkManager = networkingManager
-        self.locationManager = locationManager
-        self.language = language
+        self.userDefaultsService = userDefaultsService
     
         super.init()
-    
     }
     
     
-    func fetchWeatherWithCity(name: String, language: Language) {
-        self.networkManager.getWheatherBy(city: name, language: language){ response in
+    func fetchWeatherWithCity(name: String) {
+        let selectedLanguage = userDefaultsService.loadLanguage()
+        self.networkManager.getWheatherBy(city: name, language: selectedLanguage){ response in
             switch response {
             case let .success(items):
                 if !items.isEmpty {
                     self.presenter.presentData(items)
                 } else {
-                    self.presenter.presentError()
+                    self.presenter.presentData([])
                 }
-            case .failure(_):
-                self.presenter.presentError()
+            case let .failure(error):
+                self.presenter.presentError(error.localizedDescription)
             }
         }
     }
@@ -53,28 +50,15 @@ final class MainInteractor: NSObject, WeatherInteractorProtocol {
                 case let .success(items):
                     self.presenter.presentData(items)
                 case let .failure(error):
-                    self.presenter.presentError()
+                    self.presenter.presentError(error.localizedDescription)
                 }
             }
     }
     
-    func loadLocation() {
-        self.locationManager.startLocate()
+    func changeLanguage(on: Language) {
+        let city = self.userDefaultsService.loadLastCity()
+        self.userDefaultsService.setNewLanguage(on)
+        self.fetchWeatherWithCity(name: city)
     }
-    
-}
-
-// MARK: - CLLocationManagerDelegate
-extension MainInteractor: LocationUpdateDelegate {
-    
-    func didUpdateLocation(_ location: CLLocationCoordinate2D) {
-        if let language = self.language {
-            self.fetchWeatherWithCoordinates(lat: location.latitude, lon: location.longitude, language: language)
-        } else {
-            let language = LocalizationManager.selectedLanguage()
-            self.fetchWeatherWithCoordinates(lat: location.latitude, lon: location.longitude, language: language)
-        }
-    }
-    
 }
 

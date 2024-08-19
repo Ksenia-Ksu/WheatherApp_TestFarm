@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  WheatherApp_TestFarm
+
+  Created by Ксения Кобак on 19.08.2024.
+  
+*/
+
+"mainView_Text_headerText" = "Погода на несколько дней";
+"mainView_Text_cityError" = "Ошибка поиска";
+"mainView_Text_currentLocation" = "Погода в городе";
+"mainView_Text_wind" = "Cкорость ветра:  ";
+"mainView_Text_max" = "Maкс.темп: ";
+"mainView_Text_min" = "Mин.темп: ";
+"mainView_Menu_title" = "Выберите язык"; 
+"moscow" = "Москва";
+"search_placeholder" = "Введите город";

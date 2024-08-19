@@ -27,7 +27,9 @@ final class NetworkService: NetworkServiceProtocol {
         
         queue.async {
             let url = URLBuilder.createURL(city: name, language: language)
+         
             guard let url = URL(string: url)   else { return }
+            
             let session = URLSession(configuration: .default)
             let request = URLRequest(url: url)
             let task = session.dataTask(with: request) { data, _, error in
@@ -41,7 +43,6 @@ final class NetworkService: NetworkServiceProtocol {
                     DispatchQueue.main.async {
                         completion(.failure(error))
                     }
-                    return
                 }
             }
             task.resume()
@@ -65,7 +66,7 @@ final class NetworkService: NetworkServiceProtocol {
             }
             if let error = error {
                 DispatchQueue.main.async {
-                    completion(.failure(error as! NetworkError))
+                    completion(.failure(error))
                 }
                 return
             }

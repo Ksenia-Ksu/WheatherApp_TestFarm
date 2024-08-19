@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  WheatherApp_TestFarm
+
+  Created by Ксения Кобак on 19.08.2024.
+  
+*/
+
+"mainView_Text_headerText" = "Next few days weather";
+"mainView_Text_cityError" = "Error searching";
+"mainView_Text_currentLocation" = "Wheater in the city";
+"mainView_Text_wind" = "Wind speed: ";
+"mainView_Text_max" = "Max.temp: ";
+"mainView_Text_min" = "Min.temp: ";
+"mainView_Menu_title" = "Change language"; 
+"moscow" = "Moscow";
+"search_placeholder" = "Enter the name of city";
+

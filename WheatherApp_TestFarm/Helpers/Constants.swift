@@ -18,10 +18,16 @@ public struct SFSymbols {
 }
 
 public struct Formatter {
-    static func dateFormatter(string: String) -> String {
+    static func dateFormatter(string: String, language: Language) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        dateFormatter.locale = Locale(identifier: "ru_RU")
+        switch language {
+          case .en:
+            dateFormatter.locale = Locale(identifier: "en_En")
+        case .ru:
+            dateFormatter.locale = Locale(identifier: "ru_Ru")
+        }
+      
         let date = dateFormatter.date(from: string)
         dateFormatter.setLocalizedDateFormatFromTemplate("MMMMd")
         guard let date = date else { return ""}
@@ -33,6 +39,10 @@ public extension String {
     func firstCharUppercased() -> String {
         return prefix(1).uppercased() + self.dropFirst()
     }
+    
+    var localized: String {
+          return NSLocalizedString(self, comment:"")
+      }
 }
 
 
